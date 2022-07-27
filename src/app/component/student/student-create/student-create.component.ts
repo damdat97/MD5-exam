@@ -37,7 +37,7 @@ export class StudentCreateComponent implements OnInit {
       // @ts-ignore
       $("#exampleModal").modal("hide");
       this.studentForm.reset()
-      this.router.navigate(["/cities"])
+      this.router.navigate([""])
     }, error => {
       alert("Loi");
       console.log(error)
