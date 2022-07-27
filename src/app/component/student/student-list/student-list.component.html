@@ -1,0 +1,25 @@
+<div class="col-12" >
+  <h2 style="text-align: center" >List Student</h2>
+
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" [routerLink]="['/create']">
+    Them moi
+  </button>
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th scope="col">No.</th>
+      <th scope="col">Name</th>
+      <th scope="col">Description</th>
+      <th scope="col">Action</th>
+    </tr>
+    </thead>
+    <tr *ngFor="let student of students; index as i">
+      <td scope="row">{{i+1}}</td>
+      <td><a [routerLink]="['/student-detail', student.id]">{{student.name}}</a></td>
+      <td>{{student.description}}</td>
+      <td>{{student.action}}</td>
+      <td><button type="button" class="btn btn-outline-secondary mr-2" data-toggle="modal" data-target="#exampleModalEdit" [routerLink]="['/edit', student.id]" >Sửa</button>
+        <button type="submit" class="btn btn-outline-danger" (click)="deleteStudent(student.id)">Xoá</button></td>
+    </tr>
+  </table>
+</div>
